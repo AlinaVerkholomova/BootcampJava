@@ -36,6 +36,7 @@ public class TasksDay2 {
         Scanner sc = new Scanner(System.in);
 
         try {
+            System.out.println("\n");
             System.out.print("Enter b1: ");
             boolean boolFirst = sc.nextBoolean();
             System.out.print("Enter b2: ");
@@ -71,6 +72,7 @@ public class TasksDay2 {
 
         try {
 
+            System.out.println("\n");
             System.out.print("Please enter a number: ");
             int number = sc.nextInt();
             System.out.printf("Is %d odd number? - %b", number, number % 2 != 0);
@@ -86,6 +88,8 @@ public class TasksDay2 {
         Scanner sc = new Scanner(System.in);
 
         try {
+
+            System.out.println("\n");
             System.out.print("Enter boolean value: ");
             boolean boolVal = sc.nextBoolean();
             System.out.printf("Opposite of %b is %b", boolVal, !boolVal);
@@ -101,6 +105,7 @@ public class TasksDay2 {
 
         try {
 
+            System.out.println("\n");
             System.out.print("Enter value a: ");
             int numFirst = sc.nextInt();
             System.out.print("Enter value b: ");
