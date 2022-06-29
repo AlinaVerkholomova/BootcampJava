@@ -1,14 +1,12 @@
 package Package1;
 
-import java.util.Locale;
-
 public class Task5Day3 {
     public static void main(String[] args) {
 
         Car tesla = new ElectricCar();
         tesla.drive(60);
         tesla.handleSteering();
-        System.out.println(tesla.toString());
+        System.out.println(tesla);
 
     }
 }
