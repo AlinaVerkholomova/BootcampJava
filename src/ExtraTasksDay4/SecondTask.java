@@ -7,7 +7,7 @@ import java.util.*;
 public class SecondTask {
 
     public static void main(String[] args) {
-        
+
         File file = new File ("src/ExtraTasks/lorem.txt");
         Set<String> text = new HashSet<>();
 
@@ -15,7 +15,7 @@ public class SecondTask {
             Scanner sc = new Scanner(file);
 
             do {
-                String [] str = sc.nextLine().split("[.,;:()?! ]+");;
+                String [] str = sc.nextLine().split("[.,;:()?! ]+");
                 for(String word: str){
                     text.add(word.toLowerCase());
                 }
@@ -31,7 +31,7 @@ public class SecondTask {
             System.out.println("No such element exception");
         }
 
-        System.out.printf("Amount of unique words if %s: %d", file.getName(), text.size());
+        System.out.printf("Amount of unique words in %s: %d", file.getName(), text.size());
 
     }
 }
