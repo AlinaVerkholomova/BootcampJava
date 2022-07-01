@@ -7,7 +7,7 @@ public class Tasks34Day3 {
         BankAccount myBankAccount = new BankAccount(900);
         BankAccount newBankAccount = new BankAccount(800);
 
-        myBankAccount.moneyTransfer(newBankAccount, 1000);
+        myBankAccount.moneyTransfer(myBankAccount, newBankAccount, 1000);
         newBankAccount.printBalance();
         myBankAccount.printBalance();
 
@@ -40,20 +40,23 @@ class BankAccount {
         this.balance = balance;
     }
 
-    public void deposit(double amount) {
+    public double deposit(double amount) {
         if (amount <= 5000)
-            balance += amount;
-        else
+            return balance += amount;
+        else {
             System.out.printf("" +
                     "Transaction canceled. Max deposit - 5000 | " +
                     "Your deposit: %.2f%n", balance);
+            return 0;
+        }
     }
 
-    public void withdraw(double amount) {
+    public double withdraw(double amount) {
         if (balance >= amount)
-            balance -= amount;
+            return balance -= amount;
         else {
             System.out.println("There is not enough funds");
+            return 0;
         }
     }
 
@@ -61,16 +64,16 @@ class BankAccount {
         System.out.println("Current balance is: " + balance);
     }
 
-    public void moneyTransfer(BankAccount bankAccount, double amount) {
-        if (this.balance > 0 && this.balance >= amount) {
-            bankAccount.balance += amount;
-            this.balance -= amount;
+    public void moneyTransfer(BankAccount bankAccount1, BankAccount bankAccount2, double amount) {
+        if (bankAccount1.balance > 0 && bankAccount1.balance >= amount) {
+            bankAccount2.balance += amount;
+            bankAccount1.balance -= amount;
             System.out.printf("%.2f amount has been sent to another account %n", amount);
         }
         else
             System.out.printf("" +
                     "Transfer canceled. You are trying to transfer %.2f units, " +
-                    "but only %.2f are available.%n", amount, this.balance);
+                    "but only %.2f are available.%n", amount, bankAccount1.balance);
     }
 
 }
